@@ -1,0 +1,14 @@
+os: linux
+dist: bionic
+
+language: python
+
+cache:
+  directories:
+  - $HOME/.cache/pip
+
+install:
+- pip install mkdocs
+
+script:
+- ./.travis/build.sh
