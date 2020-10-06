@@ -9,6 +9,11 @@ cache:
 
 install:
 - pip install mkdocs
+- pip install markdown-headdown
+- pip install pymdown-extensions
+- pip install pyembed-markdown
+- pip install mdx_include
+- pip install markdown-iconfonts
 
 script:
 - ./.travis/build.sh
