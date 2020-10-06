@@ -8,12 +8,14 @@ cache:
   - $HOME/.cache/pip
 
 install:
-- pip install mkdocs
-- pip install markdown-headdown
-- pip install pymdown-extensions
-- pip install pyembed-markdown
-- pip install mdx_include
-- pip install markdown-iconfonts
+- >-
+  pip install
+  mkdocs
+  markdown-headdown
+  pymdown-extensions
+  pyembed-markdown
+  mdx_include
+  markdown-iconfonts
 
 script:
 - echo 1
