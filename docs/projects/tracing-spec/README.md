@@ -43,11 +43,13 @@ Spring properties a listed [below](#spring-properties).
 #### Render
 
 Command: `java -jar render <traceId> <rendererName> <outputPath>`
+
 * `traceId` - Trace ID
 * `rendererName` - Renderer name
 * `outputPath` - Output file path
 
 Current renderer names:
+
 * `plantuml-sequence` - [plantuml sequence diagram](https://plantuml.com/sequence-diagram)
 * `json` - JSON
 * `yaml` - YAML
@@ -55,6 +57,7 @@ Current renderer names:
 #### Match
 
 Command: `java -jar match <traceId> <patternGraphFile>`
+
 * `traceId` - Trace ID
 * `patternGraphFile` - Pattern graph file (YAML/JSON/JSON5)
 * Optional parameters:

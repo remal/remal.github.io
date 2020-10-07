@@ -1,0 +1,45 @@
+site_name: Semyon Levin
+site_author: Semyon Levin
+
+nav:
+- About: index.md
+- Projects: projects/index.md
+
+theme:
+  name: null
+  custom_dir: 'theme/'
+
+markdown_extensions:
+- toc: # https://python-markdown.github.io/extensions/toc/
+    permalink: false
+- mdx_headdown # https://github.com/SaschaCowley/Markdown-Headdown
+- pymdownx.caret # https://facelessuser.github.io/pymdown-extensions/extensions/caret/
+- pymdownx.details # https://facelessuser.github.io/pymdown-extensions/extensions/details/
+- pymdownx.emoji # https://facelessuser.github.io/pymdown-extensions/extensions/emoji/
+- pymdownx.keys # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+- pymdownx.magiclink: # https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+    hide_protocol: true
+    repo_url_shortener: true
+    social_url_shorthand: true
+- pymdownx.mark # https://facelessuser.github.io/pymdown-extensions/extensions/mark/
+- pymdownx.smartsymbols # https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
+- pymdownx.tasklist # https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
+- pymdownx.tilde # https://facelessuser.github.io/pymdown-extensions/extensions/tilde/
+- pymdownx.highlight: # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+    use_pygments: false
+- pymdownx.inlinehilite # https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
+- pymdownx.superfences # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+- pyembed.markdown # https://pyembed.github.io/usage/markdown/
+- mdx_include # https://github.com/neurobin/mdx_include
+- iconfonts: # https://github.com/MadLittleMods/markdown-icons
+    prefix_base_pairs:
+      'fa-': fa
+      'glyphicon-': glyphicon
+
+plugins:
+- search:
+    lang:
+    - en
+    - ru
+
+strict: true

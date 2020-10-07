@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <meta name="viewport" content="width=1200"/>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+  {% if config.site_description %}
+  <meta name="description" content="{{ config.site_description }}">
+  {% endif %}
+  {% if config.site_author %}
+  <meta name="author" content="{{ config.site_author }}">
+  {% endif %}
+  {% if page.canonical_url %}
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  {% endif %}
+
+  {% block htmltitle %}
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  {% endblock %}
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="{{ 'css/styles.css'|url }}" rel="stylesheet">
+  {%- for path in config['extra_css'] %}
+  <link href="{{ path|url }}" rel="stylesheet">
+  {%- endfor %}
+</head>
+<body>
+<header>
+  <div class="navbar border-bottom shadow-sm">
+    <div class="container d-flex justify-content-between">
+      {% if config.site_name %}
+      <a href="{{ nav.homepage.url|url }}" class="navbar-brand d-flex align-items-center mr-auto">{{ config.site_name }}</a>
+      {% endif %}
+      <nav>
+        {% for nav_item in nav %}
+        {% if nav_item.active %}
+        <span class="p-2">{{ nav_item.title }}</span>
+        {% else %}
+        <a class="p-2" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+        {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container mt-5">
+    {% if page.title %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {% block content %}
+    {{ page.content }}
+    {% endblock %}
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{%- for path in config['extra_javascript'] %}
+<script src="{{ path|url }}"></script>
+{%- endfor %}
+</body>
+</html>

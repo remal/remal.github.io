@@ -23,4 +23,14 @@ install:
   markdown-iconfonts
 
 script:
-- echo 1
+- mkdocs build --clean --verbose
+
+deploy:
+  skip_cleanup: true
+  provider: pages
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  verbose: true
+  on:
+    repo: remal/remal.github.io
+    branch: master
